@@ -26,13 +26,14 @@ LinkedList.prototype.init = function (array) {
 };
 
 LinkedList.prototype.toArray = function(value) {
-    
     let arr = [];
     let tempNode = this.root;
+    
     while(tempNode) {
         arr.push (tempNode.value) 
         tempNode = tempNode.next
     }
+    
     return arr;
 }
 
@@ -50,6 +51,7 @@ LinkedList.prototype.toString = function() { //toString
         tempNode = tempNode.next;
     }
     getString += "'"
+    
     return getString ;
 }
 
@@ -87,6 +89,7 @@ LinkedList.prototype.deleteLastElm = function() { //pop
 LinkedList.prototype.addElmAtEnd = function(value) { //push
     let tempNode = this.root;
     let newNode = new LinkedNode(value);
+    
     while(tempNode){
         tempNode = tempNode.next;
         if(!tempNode.next) {

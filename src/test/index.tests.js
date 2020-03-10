@@ -106,7 +106,7 @@ describe('HW5_LinkedList_OOP', function() {
 
             assert.deepEqual(actual, expectedLength);
             
-            assert.deepEqual(lList.toArray(), expectedArray)
+            assert.deepEqual(lList.toArray(), expectedArray);
         })
         it('should return [ 2, 3, 4]', function() {
             const lList = new LinkedList();
@@ -120,7 +120,7 @@ describe('HW5_LinkedList_OOP', function() {
 
             assert.deepEqual(actual, expectedLength);
             
-            assert.deepEqual(lList.toArray(), expectedArray)
+            assert.deepEqual(lList.toArray(), expectedArray);
         });
         it('should return [ 0, 3, 4]', function() {
             const lList = new LinkedList();
@@ -134,7 +134,7 @@ describe('HW5_LinkedList_OOP', function() {
 
             assert.deepEqual(actual, expectedLength);
             
-            assert.deepEqual(lList.toArray(), expectedArray)
+            assert.deepEqual(lList.toArray(), expectedArray);
         });
         it('should return [PHP , 3, 4]', function() {
             const lList = new LinkedList();
@@ -148,7 +148,7 @@ describe('HW5_LinkedList_OOP', function() {
 
             assert.deepEqual(actual, expectedLength);
             
-            assert.deepEqual(lList.toArray(), expectedArray)
+            assert.deepEqual(lList.toArray(), expectedArray);
         });
         it('should return [ undefined, 4]', function() {
             const lList = new LinkedList();
@@ -162,7 +162,7 @@ describe('HW5_LinkedList_OOP', function() {
 
             assert.deepEqual(actual, expectedLength);
             
-            assert.deepEqual(lList.toArray(), expectedArray)
+            assert.deepEqual(lList.toArray(), expectedArray);
         });
         it('should return [ null, 4]', function() {
             const lList = new LinkedList();
@@ -176,7 +176,7 @@ describe('HW5_LinkedList_OOP', function() {
 
             assert.deepEqual(actual, expectedLength);
             
-            assert.deepEqual(lList.toArray(), expectedArray)
+            assert.deepEqual(lList.toArray(), expectedArray);
         });
     });
     describe('toArray', function() {
@@ -198,6 +198,58 @@ describe('HW5_LinkedList_OOP', function() {
         it('deleteFirstElm defined', function() {
             assert.isDefined(lList.deleteFirstElm, 'function has been defined');
         });
+        it('should return [1, 2]', function() {
+            const lList = new LinkedList();
+            const array = [1, 2, 3];
+            const expectedArray = [ 2, 3 ];
+            const expectedLength = 2;
+            lList.init(array);
+
+            lList.deleteFirstElm();
+
+            assert.deepEqual(lList.getSizeOfList(), expectedLength);
+
+            assert.deepEqual(lList.toArray(), expectedArray);
+        });
+        it('should return [ 3, 4, 0]', function() {
+            const lList = new LinkedList();
+            const array = [1, 3, 4, 0];
+            const expectedArray = [ 3, 4, 0]
+            const expectedLength = 3;
+            lList.init(array);
+
+            lList.deleteFirstElm();
+
+            assert.deepEqual(lList.getSizeOfList(), expectedLength);
+            
+            assert.deepEqual(lList.toArray(), expectedArray);
+        });
+        it('should return [4, PHP, 5]', function() {
+            const lList = new LinkedList();
+            const array = [3, 4, 'PHP', 5];
+            const expectedArray = [4, 'PHP', 5]
+            const expectedLength = 3;
+            lList.init(array);
+
+            lList.deleteFirstElm();
+
+            assert.deepEqual(lList.getSizeOfList(), expectedLength);
+            
+            assert.deepEqual(lList.toArray(), expectedArray);
+        });
+        it('should return [ JS, 5, 4, 5, 7, 8, 0]', function() {
+            const lList = new LinkedList();
+            const array = [4, 'JS', 5, 4, 5, 7, 8, 0];
+            const expectedArray = [ 'JS', 5, 4, 5, 7, 8, 0]
+            const expectedLength = 7;
+            lList.init(array);
+
+            lList.deleteFirstElm();
+
+            assert.deepEqual(lList.getSizeOfList(), expectedLength);
+            
+            assert.deepEqual(lList.toArray(), expectedArray);
+        });
     });
 
     describe('addElmAtEnd', function() {
@@ -214,11 +266,11 @@ describe('HW5_LinkedList_OOP', function() {
             const expectedLength = 4;
             lList.init(array);
 
-            const actual = lList.addElmAtEnd(element);
+            lList.addElmAtEnd(element);
 
             assert.deepEqual(lList.getSizeOfList(), expectedLength);
 
-            assert.deepEqual(lList.toArray(), expectedArray)
+            assert.deepEqual(lList.toArray(), expectedArray);
         });
         it('should return [3, 4, 2]', function() {
             const lList = new LinkedList();
@@ -228,11 +280,11 @@ describe('HW5_LinkedList_OOP', function() {
             const expectedLength = 3;
             lList.init(array);
 
-            const actual = lList.addElmAtEnd(element);
+            lList.addElmAtEnd(element);
 
             assert.deepEqual(lList.getSizeOfList(), expectedLength);
             
-            assert.deepEqual(lList.toArray(), expectedArray)
+            assert.deepEqual(lList.toArray(), expectedArray);
         });
         it('should return [ 3, 4, 0]', function() {
             const lList = new LinkedList();
@@ -242,11 +294,11 @@ describe('HW5_LinkedList_OOP', function() {
             const expectedLength = 3;
             lList.init(array);
 
-            const actual = lList.addElmAtEnd(element);
+            lList.addElmAtEnd(element);
 
             assert.deepEqual(lList.getSizeOfList(), expectedLength);
             
-            assert.deepEqual(lList.toArray(), expectedArray)
+            assert.deepEqual(lList.toArray(), expectedArray);
         });
         it('should return [3, 4, PHP]', function() {
             const lList = new LinkedList();
@@ -256,17 +308,69 @@ describe('HW5_LinkedList_OOP', function() {
             const expectedLength = 3;
             lList.init(array);
 
-            const actual = lList.addElmAtEnd(element);
+            lList.addElmAtEnd(element);
 
             assert.deepEqual(lList.getSizeOfList(), expectedLength);
             
-            assert.deepEqual(lList.toArray(), expectedArray)
+            assert.deepEqual(lList.toArray(), expectedArray);
         });
     });
     describe('deleteLastElm', function() {
         const lList = new LinkedList();
         it('deleteLastElm defined', function() {
             assert.isDefined(lList.deleteLastElm, 'function has been defined');
+        });
+        it('should return [1, 2]', function() {
+            const lList = new LinkedList();
+            const array = [ 1, 2 , 4];
+            const expectedArray = [ 1, 2 ];
+            const expectedLength = 2;
+            lList.init(array);
+
+            lList.deleteLastElm();
+
+            assert.deepEqual(lList.getSizeOfList(), expectedLength);
+
+            assert.deepEqual(lList.toArray(), expectedArray);
+        });
+        it('should return [ 3, 4, 0]', function() {
+            const lList = new LinkedList();
+            const array = [ 3, 4, 0, 4];
+            const expectedArray = [ 3, 4, 0]
+            const expectedLength = 3;
+            lList.init(array);
+
+            lList.deleteLastElm();
+
+            assert.deepEqual(lList.getSizeOfList(), expectedLength);
+            
+            assert.deepEqual(lList.toArray(), expectedArray);
+        });
+        it('should return [4, PHP, 5]', function() {
+            const lList = new LinkedList();
+            const array = [ 4, 'PHP', 5, 3];
+            const expectedArray = [4, 'PHP', 5]
+            const expectedLength = 3;
+            lList.init(array);
+
+            lList.deleteLastElm();
+
+            assert.deepEqual(lList.getSizeOfList(), expectedLength);
+            
+            assert.deepEqual(lList.toArray(), expectedArray);
+        });
+        it('should return [ 1, 5, 4, 5, 7, 8]', function() {
+            const lList = new LinkedList();
+            const array = [4, 1, 5, 4, 5, 7, 8, 0];
+            const expectedArray = [4, 1, 5, 4, 5, 7, 8]
+            const expectedLength = 7;
+            lList.init(array);
+
+            lList.deleteLastElm();
+
+            assert.deepEqual(lList.getSizeOfList(), expectedLength);
+            
+            assert.deepEqual(lList.toArray(), expectedArray);
         });
     });
 
